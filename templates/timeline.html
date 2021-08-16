@@ -1,0 +1,26 @@
+{% extends 'base_page.html' %}
+{% block body %}
+<div class="w-100 fluid-container sticky-top bg-light bg-gradient p-3">
+    <div class="container d-flex justify-content-between">
+        <h2 class="text-center">タイムライン</h2>
+        <a class="btn btn-primary" href="{{create_url}}">作成する</a>
+    </div>
+</div>
+<div class="container">
+    
+    <div class="row">
+        {% for name, postedat, message in posts %}
+            <div class="col-sm-4">
+                <p class="text-secondary">{{name}}</p>
+            </div>
+            <div class="col-sm-8 text-end">
+                <p class="text-secondary">{{postedat}}</p>
+            </div>
+            <div class="col-12 pb-3">
+                <p>{{message}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+    
+{% endblock  %}

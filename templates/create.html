@@ -1,0 +1,23 @@
+{% extends 'base_page.html' %}
+{% block body %}
+    <div class="container d-flex h-100 justify-content-center align-items-center">
+        <form class="card w-100" action="{{post_url}}" method="POST">
+            <div class="card-body w-100">
+                <h5 class="card-title">作成する</h5>
+                <label class="form-label">名前</label>
+                <input class="form-control" type="text" name="form_name"/>
+                <label class="form-label">メッセージ</label>
+                <textarea class="form-control" name="form_message" rows="3"></textarea>
+
+                <div class="row pt-3">
+                    <div class="col-6">
+                        <input class="btn w-100 btn-primary"type="submit" value="投稿">
+                    </div>
+                    <div class="col-6">
+                        <a class="btn w-100 btn-outline-secondary" href="{{cancel_url}}">キャンセル</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock  %}
